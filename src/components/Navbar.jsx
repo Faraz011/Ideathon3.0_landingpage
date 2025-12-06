@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
-    <nav className="mb-8 mt-2 rounded-full border border-slate-700/60 bg-slate-950/80 px-4 py-2 shadow-[0_18px_45px_rgba(15,23,42,0.9)] backdrop-blur-xl md:mb-10 md:px-5">
+    <nav className="sticky top-0 z-50 mb-8 border border-white/10 shadow-[0_4px_30px_rgba(255,255,255,0.1)] bg-black/0 backdrop-blur-lg px-4 py-2 md:mb-10 md:px-5 rounded-lg">
       <div className="flex items-center justify-between gap-4">
         <motion.div
           className="flex items-center gap-3"
@@ -15,7 +15,7 @@ const Navbar = () => {
             GDG
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="text-[13px] font-semibold">
+            <span className="text-[13px] font-semibold text-teal-50">
               Google Developer Group
             </span>
             <span className="text-[11px] text-slate-400">
@@ -41,7 +41,7 @@ const Navbar = () => {
           ))}
           <a
             href="#register"
-            className="ml-1 rounded-full bg-gradient-to-r from-zinc-200 via-white to-yellow-400 px-4 py-1.5 text-[12px] font-bold text-black shadow-[0_10px_30px_rgba(79,70,229,0.7)]"
+            className="ml-1 rounded-full bg-linear-to-r from-zinc-200 via-white to-yellow-400 px-4 py-1.5 text-[12px] font-bold text-black shadow-[0_10px_30px_rgba(79,70,229,0.7)] hover:shadow-[0px_5px_30px_rgba(255,225,0,0.95)] transition duration-500 "
           >
             Register
           </a>

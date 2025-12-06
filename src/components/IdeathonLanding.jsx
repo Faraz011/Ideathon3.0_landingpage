@@ -2,7 +2,6 @@
 // import { motion } from "framer-motion";
 // import "../components/IdeathonLanding.css";
 
-
 // const fadeInUp = {
 //   hidden: { opacity: 0, y: 28 },
 //   visible: (delay = 0) => ({
@@ -28,7 +27,6 @@
 // const IdeathonLanding = () => {
 //   return (
 //     <>
-      
 //       <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-50 ">
 //         <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-10 pt-4 sm:px-6 md:px-8">
 //           <header className="mb-8 mt-2 rounded-full border border-slate-700/60 bg-slate-950/80 px-4 py-2 shadow-[0_18px_45px_rgba(15,23,42,0.9)] backdrop-blur-xl md:mb-10 md:px-5">
@@ -472,7 +470,6 @@
 
 // export default IdeathonLanding;
 
-
 // import React from "react";
 // import Navbar from "./Navbar";
 // import HeroSection from "./HeroSection";
@@ -515,24 +512,24 @@ import PolygonNetworkBackground from "./PolygonNetworkBackground";
 
 const IdeathonLanding = () => {
   return (
-    <div className="relative min-h-screen overflow-x-hidden bg-slate-950 text-slate-50 z-10">
-      <PolygonNetworkBackground />
+    <>
+      <Navbar />
+      <div className="relative min-h-screen overflow-x-hidden bg-slate-950 text-slate-50 z-10">
+        <PolygonNetworkBackground />
 
-      {/* Page Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-10 pt-4 sm:px-6 md:px-8">
-        <Navbar />
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col pb-10 px-4 sm:px-6 md:px-8">
+          <main className="flex-1">
+            <HeroSection />
+            <AboutSection />
+            <TracksSection />
+            <TimelineSection />
+            <RegisterSection />
+          </main>
 
-        <main className="flex-1">
-          <HeroSection />
-          <AboutSection />
-          <TracksSection />
-          <TimelineSection />
-          <RegisterSection />
-        </main>
-
-        <Footer />
+          <Footer />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

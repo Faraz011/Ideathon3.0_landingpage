@@ -95,7 +95,7 @@ const HeroSection = () => {
           custom={0.3}
           className="flex flex-wrap gap-2 text-[11px]"
         >
-          <div className="inline-flex items-baseline gap-1 rounded-full border border-slate-600/70 bg-slate-900/80 px-3 py-1">
+          <div className="inline-flex items-baseline gap-1 rounded-full px-3 py-1 shadow-[0_4px_30px_rgba(255,255,255,0.1)] border border-white/20 backdrop-blur-lg bg-black/10 ">
             <span className="uppercase tracking-[0.16em] text-slate-500">
               Where
             </span>
@@ -153,7 +153,7 @@ const HeroSection = () => {
         className="relative flex min-h-[230px] items-center justify-center"
       >
         <motion.div
-          className="relative top-[-250px] left-[350px] z-10 w-full max-w-xs rounded-2xl border border-slate-600/70 bg-slate-950/90 p-4 shadow-[0_22px_45px_rgba(15,23,42,0.95)] backdrop-blur-xl"
+          className="relative top-[-250px] left-[350px] z-10 w-full max-w-xs rounded-2xl p-4  backdrop-blur-xl shadow-[0_4px_30px_rgba(255,255,255,0.1)] border border-white/20 bg-black/0 "
           animate={{ y: [-12, 0, -12] }}
           transition={{
             duration: 6,
