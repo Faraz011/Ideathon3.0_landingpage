@@ -50,8 +50,8 @@ const TimelineSection = () => {
         ].map((item) => (
           <div key={item.title} className="relative mb-4 last:mb-0">
             <div className="absolute -left-[0.9rem] top-1 h-3.5 w-3.5 rounded-full border-2 border-sky-400 bg-slate-950 shadow-[0_0_16px_rgba(56,189,248,0.9)]" />
-            <h3 className="text-[13px] font-semibold">{item.title}</h3>
-            <p className="text-[12px] text-slate-300">{item.desc}</p>
+            <h3 className="ml-2 text-[13px] font-semibold">{item.title}</h3>
+            <p className="ml-2 text-[12px] text-slate-300">{item.desc}</p>
           </div>
         ))}
       </div>

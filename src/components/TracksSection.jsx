@@ -51,13 +51,20 @@ const TracksSection = () => {
             body: "Anything that solves a real-world problem creatively.",
           },
         ].map((chip) => (
-          <div
+          <motion.div
+            animate={{ y: [-25, 0, -25] }}
+            transition={{
+              duration: chip.title.length * 0.25,
+              repeat: Infinity,
+              repeatType: "loop", // or "mirror"
+              ease: "easeInOut",
+            }}
             key={chip.title}
-            className="space-y-1 rounded-2xl border border-dashed border-slate-600/70 bg-slate-950/80 p-3"
+            className="space-y-1 rounded-2xl border border-dashed border-slate-600/70 bg-slate-950/80 p-3 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(255,215,0,0.6)] transition-all duration-300"
           >
             <span className="text-[13px] font-semibold">{chip.title}</span>
             <p className="text-[12px] text-slate-300">{chip.body}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </motion.section>
@@ -65,3 +72,10 @@ const TracksSection = () => {
 };
 
 export default TracksSection;
+
+// animate={{ y: [-8, 0, -8] }}
+// transition={{
+//   duration: 5 + chip.title.length * 1.0,
+//   repeat: Infinity,
+//   ease: "easeInOut",
+// }}

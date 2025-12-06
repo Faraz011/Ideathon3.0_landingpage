@@ -11,6 +11,14 @@ const fadeInUp = {
   }),
 };
 
+const stars = Array.from({ length: 60 }, (_, i) => ({
+  id: i,
+  top: Math.random() * 100,
+  left: Math.random() * 100,
+  size: Math.random() * 3 + 1,
+  duration: Math.random() * 6 + 3,
+}));
+
 const staggerChildren = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.14 } },
@@ -39,14 +47,35 @@ const HeroSection = () => {
           </span>
         </motion.div>
 
+        <div className="starfield">
+          {stars.map((star) => (
+            <motion.span
+              key={star.id}
+              className="star bg-amber-200"
+              style={{
+                top: `${star.top}%`,
+                left: `${star.left}%`,
+                width: star.size,
+                height: star.size,
+              }}
+              animate={{ opacity: [0, 1, 0] }}
+              transition={{
+                duration: star.duration,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            />
+          ))}
+        </div>
+
         <motion.h1
           variants={fadeInUp}
           custom={0.1}
           className="text-balance text-4xl font-semibold leading-tight tracking-tight sm:text-5xl"
         >
-          ideathon{" "}
-          <span className="bg-gradient-to-r from-sky-400 via-violet-400 to-amber-400 bg-clip-text text-transparent">
-            3.0
+          Protocol{" "}
+          <span className="bg-linear-to-r from-yellow-400 via-white to-yellow-400 bg-clip-text text-transparent">
+            &apos;26
           </span>
         </motion.h1>
 
@@ -57,9 +86,8 @@ const HeroSection = () => {
         >
           36 hours of ideas, prototypes, and pitches under the stars. ideathon
           3.0 is the idea-first hackathon under{" "}
-          <span className="font-bold text-orange-700">protocol&apos;26</span>{" "}
-          by GDG On Campus, BIT Mesra. Go from zero to pitch-ready with your
-          crew.
+          <span className="font-bold text-amber-400">protocol&apos;26</span> by
+          GDG On Campus, BIT Mesra. Go from zero to pitch-ready with your crew.
         </motion.p>
 
         <motion.div
@@ -88,7 +116,7 @@ const HeroSection = () => {
         >
           <a
             href="#register"
-            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 via-indigo-400 to-sky-400 px-5 py-2 text-sm font-medium text-white shadow-[0_18px_40px_rgba(55,48,163,0.9)] transition hover:scale-[1.02] hover:shadow-[0_24px_55px_rgba(55,48,163,1)]"
+            className="inline-flex items-center justify-center rounded-full bg-linear-to-r from-zinc-200 via-white to-yellow-400 px-5 py-2 text-sm font-bold text-black shadow-[0_18px_40px_rgba(55,48,163,0.9)] transition hover:scale-[1.02] hover:shadow-[0px_5px_30px_rgba(255,225,0,0.95)]"
           >
             Reserve your orbit
           </a>
@@ -135,8 +163,8 @@ const HeroSection = () => {
         >
           <h3 className="mb-1 text-sm font-semibold">Build beyond earth</h3>
           <p className="mb-3 text-[13px] text-slate-300">
-            AI, Web, Cloud, and more. Bring your wildest ideas, form a crew,
-            and launch something unforgettable in ideathon 3.0.
+            AI, Web, Cloud, and more. Bring your wildest ideas, form a crew, and
+            launch something unforgettable in ideathon 3.0.
           </p>
           <div className="flex flex-wrap gap-1.5 text-[11px]">
             <span className="rounded-full border border-slate-600/70 bg-slate-900/80 px-2.5 py-1">

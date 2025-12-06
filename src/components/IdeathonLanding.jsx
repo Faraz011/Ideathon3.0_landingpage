@@ -472,6 +472,36 @@
 
 // export default IdeathonLanding;
 
+
+// import React from "react";
+// import Navbar from "./Navbar";
+// import HeroSection from "./HeroSection";
+// import AboutSection from "./AboutSection";
+// import TracksSection from "./TracksSection";
+// import TimelineSection from "./TimelineSection";
+// import RegisterSection from "./RegisterSection";
+// import Footer from "./Footer";
+
+// const IdeathonLanding = () => {
+//   return (
+//     <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-50 ">
+//       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-10 pt-4 sm:px-6 md:px-8">
+//         <Navbar />
+//         <main className="flex-1">
+//           <HeroSection />
+//           <AboutSection />
+//           <TracksSection />
+//           <TimelineSection />
+//           <RegisterSection />
+//         </main>
+//         <Footer />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default IdeathonLanding;
+
 // src/components/IdeathonLanding.jsx
 import React from "react";
 import Navbar from "./Navbar";
@@ -481,12 +511,17 @@ import TracksSection from "./TracksSection";
 import TimelineSection from "./TimelineSection";
 import RegisterSection from "./RegisterSection";
 import Footer from "./Footer";
+import PolygonNetworkBackground from "./PolygonNetworkBackground";
 
 const IdeathonLanding = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-50 ">
+    <div className="relative min-h-screen overflow-x-hidden bg-slate-950 text-slate-50 z-10">
+      <PolygonNetworkBackground />
+
+      {/* Page Content */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-10 pt-4 sm:px-6 md:px-8">
         <Navbar />
+
         <main className="flex-1">
           <HeroSection />
           <AboutSection />
@@ -494,6 +529,7 @@ const IdeathonLanding = () => {
           <TimelineSection />
           <RegisterSection />
         </main>
+
         <Footer />
       </div>
     </div>

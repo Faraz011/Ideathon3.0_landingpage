@@ -11,14 +11,6 @@ const fadeInUp = {
   }),
 };
 
-const stars = Array.from({ length: 60 }, (_, i) => ({
-  id: i,
-  top: Math.random() * 100,
-  left: Math.random() * 100,
-  size: Math.random() * 3 + 1,
-  duration: Math.random() * 6 + 4,
-}));
-
 const AboutSection = () => {
   return (
     <motion.section
@@ -42,28 +34,6 @@ const AboutSection = () => {
         </p>
       </div>
 
-      {/* starfield background (uses your CSS .starfield / .star) */}
-      <div className="starfield">
-        {stars.map((star) => (
-          <motion.span
-            key={star.id}
-            className="star"
-            style={{
-              top: `${star.top}%`,
-              left: `${star.left}%`,
-              width: star.size,
-              height: star.size,
-            }}
-            animate={{ opacity: [0.1, 1, 0.1] }}
-            transition={{
-              duration: star.duration,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-          />
-        ))}
-      </div>
-
       <div className="grid gap-4 md:grid-cols-3">
         {[
           {
@@ -79,15 +49,25 @@ const AboutSection = () => {
             body: "Tell the story, show the impact, and convince the jury why your solution should exist.",
           },
         ].map((card) => (
-          <div
+          <motion.div
+            animate={{ y: [-25, 0, -25] }}
+            transition={{
+              duration:
+                card.title.length > 5
+                  ? Number(card.title.length - 4)
+                  : Number(card.title.length * 0.3),
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+            }}
             key={card.title}
-            className="rounded-2xl border border-slate-700/70 bg-slate-950/80 p-4 text-sm shadow-[0_18px_38px_rgba(15,23,42,0.9)] backdrop-blur-xl"
+            className="rounded-2xl border border-slate-700/70 bg-slate-950/80 p-4 text-sm shadow-[0_18px_38px_rgba(15,23,42,0.9)] backdrop-blur-xl z-10 hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(255,215,0,0.6)] transition-all duration-300"
           >
             <h3 className="mb-1 text-[15px] font-semibold">{card.title}</h3>
             <p className="text-[13px] leading-relaxed text-slate-300">
               {card.body}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </motion.section>

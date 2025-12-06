@@ -1,10 +1,9 @@
-// src/components/Navbar.jsx
 import React from "react";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
-    <header className="mb-8 mt-2 rounded-full border border-slate-700/60 bg-slate-950/80 px-4 py-2 shadow-[0_18px_45px_rgba(15,23,42,0.9)] backdrop-blur-xl md:mb-10 md:px-5">
+    <nav className="mb-8 mt-2 rounded-full border border-slate-700/60 bg-slate-950/80 px-4 py-2 shadow-[0_18px_45px_rgba(15,23,42,0.9)] backdrop-blur-xl md:mb-10 md:px-5">
       <div className="flex items-center justify-between gap-4">
         <motion.div
           className="flex items-center gap-3"
@@ -42,13 +41,13 @@ const Navbar = () => {
           ))}
           <a
             href="#register"
-            className="ml-1 rounded-full bg-gradient-to-r from-indigo-500 via-indigo-400 to-sky-400 px-4 py-1.5 text-[12px] font-semibold text-white shadow-[0_10px_30px_rgba(79,70,229,0.7)]"
+            className="ml-1 rounded-full bg-gradient-to-r from-zinc-200 via-white to-yellow-400 px-4 py-1.5 text-[12px] font-bold text-black shadow-[0_10px_30px_rgba(79,70,229,0.7)]"
           >
             Register
           </a>
         </motion.nav>
       </div>
-    </header>
+    </nav>
   );
 };
 

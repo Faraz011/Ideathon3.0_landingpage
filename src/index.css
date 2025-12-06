@@ -16,6 +16,5 @@ font-family: "Funnel Sans", sans-serif;
 .star {
   position: absolute;
   border-radius: 50%;
-  background: white;
   filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
 }
