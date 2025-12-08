@@ -29,19 +29,19 @@ const AboutSection = () => {
   const cardData = [
     {
       title: "Ideate",
-      body: "Identify real problems, validate them with mentors, and frame impactful solutions that matter.",
+      body: "Transform meaningful problems into clear, innovative, and future-focused solution ideas.",
       icon: "",
       delay: 0,
     },
     {
       title: "Prototype",
-      body: "Convert your idea into a working demo using your favourite stack, tools, and APIs.",
+      body: "Build working solutions using AI, ML, and Web3 within limited time constraints.",
       icon: "",
       delay: 0.1,
     },
     {
       title: "Pitch",
-      body: "Tell the story, show the impact, and convince the jury why your solution should exist.",
+      body: "Present your idea clearly, confidently, and convincingly to demonstrate impact and scalability.",
       icon: "",
       delay: 0.2,
     },
@@ -69,7 +69,10 @@ const AboutSection = () => {
       />
 
       {/* Header Section */}
-      <motion.div className="max-w-5xl mx-auto mb-12 sm:mb-16 relative z-10" variants={itemVariants}>
+      <motion.div
+        className="max-w-5xl mx-auto mb-12 sm:mb-16 relative z-10"
+        variants={itemVariants}
+      >
         <div className="space-y-4">
           {/* Badge */}
           <motion.div
@@ -80,7 +83,9 @@ const AboutSection = () => {
             transition={{ duration: 0.5 }}
           >
             <div className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
-            <span className="text-xs font-bold text-yellow-300 tracking-widest">ABOUT_THIS_EVENT</span>
+            <span className="text-xs font-bold text-yellow-300 tracking-widest">
+              ABOUT_THIS_EVENT
+            </span>
           </motion.div>
 
           {/* Main heading */}
@@ -89,17 +94,22 @@ const AboutSection = () => {
           </h2>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl">
-            Protocol '26 is the idea-focused hackathon under{" "}
+          <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-4xl">
+              Hack to JH {""} 
             <motion.span
               className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100"
               animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              protocol&apos;26
-            </motion.span>{" "}
-            by GDG On Campus, BIT Mesra. You don&apos;t need a polished product —
-            just a powerful concept, a sharp prototype, and a pitch that inspires.
+               PROTOCOL&apos;26 {""}
+            </motion.span>
+            is a 36-hour hackathon by Web3JH and GDG On
+            Campus BIT Mesra as part of IDEATHON 3.0. It brings students and
+            developers together to build real-world solutions using AI, ML, and
+            Web3 technologies. Participants collaborate in teams to rapidly
+            ideate, develop prototypes, and pitch their innovations. The event
+            promotes practical learning, mentorship, and industry-style
+            problem-solving to create impactful, future-ready projects.
           </p>
         </div>
       </motion.div>
@@ -121,11 +131,11 @@ const AboutSection = () => {
             transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
             className="group h-full"
           >
-            
             <motion.div
               className="relative h-full rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-300"
               style={{
-                background: "linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(212, 175, 55, 0.05) 100%)",
+                background:
+                  "linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(212, 175, 55, 0.05) 100%)",
                 border: "1px solid rgba(212, 175, 55, 0.2)",
                 boxShadow:
                   "0 8px 32px rgba(212, 175, 55, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.15), inset 0 -1px 1px rgba(0, 0, 0, 0.2)",
@@ -155,7 +165,8 @@ const AboutSection = () => {
               <motion.div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{
-                  background: "linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, transparent 100%)",
+                  background:
+                    "linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, transparent 100%)",
                 }}
               />
 
@@ -188,9 +199,7 @@ const AboutSection = () => {
                 </p>
 
                 {/* Bottom accent line */}
-                <motion.div
-                  className="h-1 w-0 group-hover:w-full bg-gradient-to-r from-yellow-400 to-transparent mt-4 transition-all duration-500"
-                />
+                <motion.div className="h-1 w-0 group-hover:w-full bg-gradient-to-r from-yellow-400 to-transparent mt-4 transition-all duration-500" />
               </div>
 
               {/* Corner accent */}

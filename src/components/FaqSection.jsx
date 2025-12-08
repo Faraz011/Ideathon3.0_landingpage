@@ -1,5 +1,5 @@
 // src/components/RegisterSection.jsx
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 const containerVariants = {
@@ -25,10 +25,50 @@ const itemVariants = {
   },
 };
 
+const faq = [
+  {
+    question: "What is Hack to JH PROTOCOL’26?",
+    answer:
+      "Hack to JH PROTOCOL’26 is a 36-hour hackathon organised by WEB3JH and GDG On Campus BIT Mesra, focused on AI, ML, and Web3 innovation.",
+  },
+  {
+    question: "Who can participate?",
+    answer:
+      "Students from all branches and years with an interest in technology and innovation can participate.",
+  },
+  {
+    question: "Is Hack to JH PROTOCOL’26 an online or offline event?",
+    answer: "Event format details will be shared with registered participants.",
+  },
+  {
+    question: "What should participants bring?",
+    answer:
+      "Participants should bring their laptops, chargers, and enthusiasm to build and learn.",
+  },
+  {
+    question: "Do I need prior hackathon experience?",
+    answer:
+      "No prior experience is required. Beginners and experienced participants are both welcome.",
+  },
+  {
+    question: "What is the team size?",
+    answer:
+      "Teams can be formed according to the guidelines provided during registration.",
+  },
+  {
+    question: "Will mentorship be provided?",
+    answer:
+      "Yes, mentors will be available to guide teams throughout the hackathon.",
+  },
+];
+
 const RegisterSection = () => {
+  const [showAll, setShowAll] = useState(false);
+  const visibleFaqs = showAll ? faq : faq.slice(0, 3);
+
   return (
     <motion.section
-      id="register"
+      id="faq"
       className="mb-16 sm:mb-20 md:mb-24 py-16 px-4 sm:px-6 md:px-8 relative overflow-hidden"
       variants={containerVariants}
       initial="hidden"
@@ -50,33 +90,38 @@ const RegisterSection = () => {
       {/* Main container */}
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Header Section - PROMINENT */}
-        <motion.div className="mb-12 sm:mb-16 space-y-4 text-center" variants={itemVariants}>
+        <motion.div
+          className="mb-12 sm:mb-16 space-y-4 text-center"
+          variants={itemVariants}
+        >
           {/* Badge */}
-          <motion.div
+          {/* <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-yellow-500/30 bg-yellow-500/5 backdrop-blur-md mx-auto"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <motion.div
+             <motion.div
               className="w-2 h-2 rounded-full bg-yellow-400"
               animate={{ scale: [1, 1.5, 1] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-            />
-            <span className="text-xs font-bold text-yellow-300 tracking-widest">🚀 REGISTRATION_OPEN</span>
-          </motion.div>
+            /> 
+             <span className="text-xs font-bold text-yellow-300 tracking-widest">🚀 REGISTRATION_OPEN</span>
+          </motion.div> */}
 
-          {/* Main Title - EXTRA LARGE */}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-400 leading-tight">
-            Ready to Launch?
+          <h2 className="text-2xl sm:text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-400 leading-tight">
+            FAQ's
           </h2>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl mx-auto font-medium">
-            Spots are limited. Get your team onboarded and be part of
-            <span className="text-yellow-300 font-semibold"> protocol&apos;26</span>'s
-            flagship ideathon.
+          <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto font-medium">
+            Before you launch into innovation mode for
+            <span className="text-yellow-300 font-semibold">
+              {" "}
+              protocol&apos;26 {""}
+            </span>
+            check out these essential insights every participant should know!
           </p>
         </motion.div>
 
@@ -124,52 +169,49 @@ const RegisterSection = () => {
 
               {/* Content */}
               <div className="relative z-10 space-y-6">
-                {/* Question 1 */}
-                <motion.div
-                  className="space-y-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
-                >
-                  <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-yellow-300 transition-colors duration-300">
-                    Who can participate?
-                  </h3>
-                  <p className="text-sm sm:text-base text-white/70 leading-relaxed">
-                    Students of BIT Mesra (exact eligibility, team size, and rules will
-                    be shared in the official brochure and announcement post for
-                    ideathon 3.0 under protocol&apos;26).
-                  </p>
-                </motion.div>
+                {visibleFaqs.map((item, index) => (
+                  <div key={index} className="space-y-6">
+                    <motion.div
+                      className="space-y-2 group"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                    >
+                      <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-yellow-300 transition-colors duration-300">
+                        {item.question}
+                      </h3>
+                      <p className="text-sm sm:text-base text-white/70 leading-relaxed">
+                        {item.answer}
+                      </p>
+                    </motion.div>
 
-                {/* Divider */}
-                <div className="h-px bg-gradient-to-r from-yellow-400/20 via-yellow-400/5 to-transparent" />
+                    {index < visibleFaqs.length - 1 && (
+                      <div className="h-px bg-gradient-to-r from-yellow-400/20 via-yellow-400/5 to-transparent" />
+                    )}
+                  </div>
+                ))}
 
-                {/* Question 2 */}
-                <motion.div
-                  className="space-y-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                >
-                  <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-yellow-300 transition-colors duration-300">
-                    Do I need a full prototype?
-                  </h3>
-                  <p className="text-sm sm:text-base text-white/70 leading-relaxed">
-                    A solid concept with a basic prototype/demo is enough. Clarity,
-                    feasibility, and impact will matter the most during evaluation.
-                  </p>
-                </motion.div>
+                {/* Button Logic */}
+                {faq.length > 3 && (
+                  <div className="flex justify-center pt-4">
+                    <motion.button
+                      whileHover={{ scale: 1.06 }}
+                      whileTap={{ scale: 0.97 }}
+                      onClick={() => setShowAll(!showAll)}
+                      className="px-5 py-2 rounded-lg border border-yellow-400 text-yellow-300 font-medium bg-transparent hover:bg-yellow-400/10 transition-colors duration-300"
+                    >
+                      {showAll ? "Show Less" : "Show More"}
+                    </motion.button>
+                  </div>
+                )}
               </div>
 
               {/* Bottom accent line */}
-              <motion.div
-                className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full bg-gradient-to-r from-yellow-400 to-transparent transition-all duration-500"
-              />
+              <motion.div className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full bg-linear-to-r from-yellow-400 to-transparent transition-all duration-500" />
 
               {/* Corner accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-yellow-400/10 to-transparent rounded-bl-3xl" />
+              <div className="absolute top-0 right-0 w-20 h-20 bg-linear-to-bl from-yellow-400/10 to-transparent rounded-bl-3xl" />
             </motion.div>
           </motion.div>
 
@@ -257,15 +299,15 @@ const RegisterSection = () => {
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
                   Stay tuned to{" "}
-                  <span className="text-yellow-300 font-semibold">GDG On Campus, BIT Mesra</span> socials
-                  and your college groups for the official announcement.
+                  <span className="text-yellow-300 font-semibold">
+                    GDG On Campus, BIT Mesra
+                  </span>{" "}
+                  socials and your college groups for the official announcement.
                 </motion.p>
               </div>
 
               {/* Bottom accent line */}
-              <motion.div
-                className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full bg-gradient-to-r from-yellow-400 to-transparent transition-all duration-500"
-              />
+              <motion.div className="absolute bottom-0 left-0 h-1 w-0 group-hover:w-full bg-gradient-to-r from-yellow-400 to-transparent transition-all duration-500" />
 
               {/* Corner accent */}
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-yellow-400/15 to-transparent rounded-bl-3xl" />
@@ -289,3 +331,44 @@ const RegisterSection = () => {
 };
 
 export default RegisterSection;
+
+//  <div className="relative z-10 space-y-6">
+//                 {/* Question 1 */}
+//                 <motion.div
+//                   className="space-y-2"
+//                   initial={{ opacity: 0, x: -20 }}
+//                   whileInView={{ opacity: 1, x: 0 }}
+//                   viewport={{ once: true }}
+//                   transition={{ duration: 0.6 }}
+//                 >
+//                   <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-yellow-300 transition-colors duration-300">
+//                     Who can participate?
+//                   </h3>
+//                   <p className="text-sm sm:text-base text-white/70 leading-relaxed">
+//                     Students of BIT Mesra (exact eligibility, team size, and
+//                     rules will be shared in the official brochure and
+//                     announcement post for ideathon 3.0 under protocol&apos;26).
+//                   </p>
+//                 </motion.div>
+
+//                 {/* Divider */}
+//                 <div className="h-px bg-gradient-to-r from-yellow-400/20 via-yellow-400/5 to-transparent" />
+
+//                 {/* Question 2 */}
+//                 <motion.div
+//                   className="space-y-2"
+//                   initial={{ opacity: 0, x: -20 }}
+//                   whileInView={{ opacity: 1, x: 0 }}
+//                   viewport={{ once: true }}
+//                   transition={{ duration: 0.6, delay: 0.1 }}
+//                 >
+//                   <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-yellow-300 transition-colors duration-300">
+//                     Do I need a full prototype?
+//                   </h3>
+//                   <p className="text-sm sm:text-base text-white/70 leading-relaxed">
+//                     A solid concept with a basic prototype/demo is enough.
+//                     Clarity, feasibility, and impact will matter the most during
+//                     evaluation.
+//                   </p>
+//                 </motion.div>
+//               </div>

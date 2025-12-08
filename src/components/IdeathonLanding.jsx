@@ -1,10 +1,11 @@
 import React from "react";
+
 import Navbar from "./Navbar";
 import HeroSection from "./HeroSection";
 import AboutSection from "./AboutSection";
 import TracksSection from "./TracksSection";
 import TimelineSection from "./TimelineSection";
-import RegisterSection from "./RegisterSection";
+import RegisterSection from "./FaqSection";
 import Footer from "./Footer";
 import PolygonNetworkBackground from "./PolygonNetworkBackground";
 import FeaturedSpeaker from "./FeaturedSpeaker";
@@ -26,7 +27,6 @@ const IdeathonLanding = () => {
             <Sponsors />
             <RegisterSection />
           </main>
-
           <Footer />
         </div>
       </div>

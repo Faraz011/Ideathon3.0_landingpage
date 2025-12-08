@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -63,10 +62,12 @@ const HeroSection = () => {
               </span>
             </motion.div>
 
-          
             {/* Main heading */}
-             <img src="/logo.light.png" alt="Protocol '26" className="inline-block w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl" />
-            
+            <img
+              src="/logo.light.png"
+              alt="Protocol '26"
+              className="inline-block w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl"
+            />
 
             {/* Description */}
             <motion.p
@@ -74,9 +75,13 @@ const HeroSection = () => {
               custom={0.2}
               className="max-w-2xl text-base sm:text-lg md:text-xl text-white/80 leading-relaxed font-medium"
             >
-              36 hours of ideas, prototypes, and pitches under the stars. 
-              <span className="text-yellow-300 font-bold"> Protocol '26</span> is the idea-first hackathon under protocol&apos;26 by
-              GDG On Campus, BIT Mesra. Go from zero to pitch-ready with your crew.
+              36 hours of ideas, prototypes, and pitches under the stars.
+              <span className="text-yellow-300 font-bold">
+                
+                Protocol '26
+              </span>
+              is the idea-first hackathon under protocol&apos;26 by GDG On
+              Campus, BIT Mesra. Go from zero to pitch-ready with your crew.
             </motion.p>
 
             {/* Info badges */}
@@ -95,8 +100,12 @@ const HeroSection = () => {
                 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="text-xs font-bold text-yellow-300 tracking-widest uppercase">📍 Where</span>
-                <span className="text-sm text-white/80 font-medium">BIT Mesra • On Campus</span>
+                <span className="text-xs font-bold text-yellow-300 tracking-widest uppercase">
+                  📍 Where
+                </span>
+                <span className="text-sm text-white/80 font-medium">
+                  BIT Mesra • On Campus
+                </span>
               </motion.div>
 
               <motion.div
@@ -109,8 +118,12 @@ const HeroSection = () => {
                 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="text-xs font-bold text-yellow-300 tracking-widest uppercase">📅 When</span>
-                <span className="text-sm text-white/80 font-medium">Early 2026 • TBA</span>
+                <span className="text-xs font-bold text-yellow-300 tracking-widest uppercase">
+                  📅 When
+                </span>
+                <span className="text-sm text-white/80 font-medium">
+                  Early 2026 • TBA
+                </span>
               </motion.div>
             </motion.div>
 
@@ -156,7 +169,6 @@ const HeroSection = () => {
               </motion.a>
             </motion.div>
 
-            {/* Hashtags */}
             <motion.div
               variants={fadeInUp}
               custom={0.5}
@@ -201,7 +213,6 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
             >
-              {/* Animated grid background */}
               <div className="absolute inset-0 opacity-5">
                 <div
                   style={{
@@ -230,8 +241,12 @@ const HeroSection = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 }}
                 >
-                  AI, Web, Cloud, and more. Bring your wildest ideas, form a crew, and
-                  launch something unforgettable in Protocol '26.
+                  Hack to JH PROTOCOL’26 is your launchpad to push ideas beyond
+                  gravity. Like a rocket mission, this hackathon demands
+                  precision, speed, and ambition. Build using AI, ML, and Web3
+                  to create solutions that are autonomous and future-ready. Fuel
+                  your ideas.<br/>
+                  Reach beyond Earth.
                 </motion.p>
 
                 <motion.div
