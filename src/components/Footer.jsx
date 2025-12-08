@@ -48,7 +48,7 @@ const Footer = () => {
             </div>
             
             <p className="text-sm text-gray-400 leading-relaxed">
-              Ideathon 3.0 under Protocol '26 — a campus hackathon by GDG On Campus, BIT Mesra.
+              Under Protocol '26 — a campus hackathon by GDG On Campus, BIT Mesra.
             </p>
             
             <div className="flex items-center gap-3 pt-2">
