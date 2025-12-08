@@ -63,17 +63,10 @@ const HeroSection = () => {
               </span>
             </motion.div>
 
+          
             {/* Main heading */}
-            <motion.h1
-              variants={fadeInUp}
-              custom={0.1}
-              className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight tracking-tight"
-            >
-              Protocol{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-400">
-                &apos;26
-              </span>
-            </motion.h1>
+             <img src="/logo.light.png" alt="Protocol '26" className="inline-block w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl" />
+            
 
             {/* Description */}
             <motion.p
@@ -82,7 +75,7 @@ const HeroSection = () => {
               className="max-w-2xl text-base sm:text-lg md:text-xl text-white/80 leading-relaxed font-medium"
             >
               36 hours of ideas, prototypes, and pitches under the stars. 
-              <span className="text-yellow-300 font-bold"> ideathon 3.0</span> is the idea-first hackathon under protocol&apos;26 by
+              <span className="text-yellow-300 font-bold"> Protocol '26</span> is the idea-first hackathon under protocol&apos;26 by
               GDG On Campus, BIT Mesra. Go from zero to pitch-ready with your crew.
             </motion.p>
 
@@ -169,7 +162,7 @@ const HeroSection = () => {
               custom={0.5}
               className="flex flex-wrap gap-2 pt-4"
             >
-              {["#hackathon", "#ideathon3", "#protocol26", "#gdgOnCampus"].map(
+              {["#hackathon", "#protocol26", "#gdgOnCampus"].map(
                 (tag, index) => (
                   <motion.span
                     key={tag}
@@ -238,7 +231,7 @@ const HeroSection = () => {
                   transition={{ delay: 0.7 }}
                 >
                   AI, Web, Cloud, and more. Bring your wildest ideas, form a crew, and
-                  launch something unforgettable in ideathon 3.0.
+                  launch something unforgettable in Protocol '26.
                 </motion.p>
 
                 <motion.div
