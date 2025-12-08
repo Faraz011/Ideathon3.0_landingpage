@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-3 z-50 mx-auto mb-8 md:mb-10 max-w-7xl rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl px-4 py-2 md:px-5 shadow-[0_8px_30px_rgba(0,0,0,0.25)] ring-1 ring-white/10 relative overflow-hidden">
+    <nav className="sticky top-1 z-50 mx-auto mb-8 md:mb-10 max-w-7xl rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl px-4 py-2 md:px-5 shadow-[0_8px_30px_rgba(0,0,0,0.25)] ring-1 ring-white/10 relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-yellow-400/10 opacity-60" />
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-400/40 to-transparent" />
       <div className="flex items-center justify-between gap-4 relative z-10">

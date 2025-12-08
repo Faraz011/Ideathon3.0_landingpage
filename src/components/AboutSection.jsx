@@ -85,12 +85,12 @@ const AboutSection = () => {
 
           {/* Main heading */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-100 to-yellow-400">
-            What is Ideathon 3.0?
+            What is Protocol '26?
           </h2>
 
           {/* Description */}
           <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl">
-            Ideathon 3.0 is the idea-focused hackathon under{" "}
+            Protocol '26 is the idea-focused hackathon under{" "}
             <motion.span
               className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-100"
               animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
@@ -121,7 +121,7 @@ const AboutSection = () => {
             transition={{ duration: 0.3, type: "spring", stiffness: 300 }}
             className="group h-full"
           >
-            {/* Card container with glassmorphism */}
+            
             <motion.div
               className="relative h-full rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-300"
               style={{
